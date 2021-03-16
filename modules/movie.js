@@ -1,8 +1,8 @@
 const express=require('express');
 const Joi = require('Joi');
 const mongoose=require('mongoose');
-const{genreschema}=require('./genre');
-const Movie= mongoose.model('Movie', new mongoose.Schema({
+const{GenreSchema}=require('./genre');
+const Movie= mongoose.model('Movie',new mongoose.Schema({
     title:{
         type: String,
         required:true,
@@ -11,7 +11,7 @@ const Movie= mongoose.model('Movie', new mongoose.Schema({
         maxlength:255
     },
     genre:{
-        type:genreschema,
+        type:GenreSchema,
         required: true
     },
     numberinstock:{
